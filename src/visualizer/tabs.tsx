@@ -304,12 +304,12 @@ export function RendersTab({ rt, lang, onToggleHighlight }: TabProps) {
           {tr(lang, 'rendersTitle')}
         </h3>
         <label className="flex cursor-pointer items-center gap-2 text-xs text-slate-300" title={tr(lang, 'highlightHint')}>
-          <span className="text-emerald-300">{tr(lang, 'highlightLabel')}</span>
+          <span className="text-cyan-300">{tr(lang, 'highlightLabel')}</span>
           <button
             role="switch"
             aria-checked={rt.highlight}
             onClick={() => onToggleHighlight(!rt.highlight)}
-            className={`relative h-5 w-9 rounded-full transition-colors ${rt.highlight ? 'bg-emerald-500' : 'bg-white/15'}`}
+            className={`relative h-5 w-9 rounded-full transition-colors ${rt.highlight ? 'bg-cyan-400' : 'bg-white/15'}`}
           >
             <span
               className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${rt.highlight ? 'left-[18px]' : 'left-0.5'}`}

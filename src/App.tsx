@@ -264,7 +264,7 @@ export default function App() {
           <button
             onClick={() => doRun(codeRef.current)}
             disabled={rs.compiling}
-            className="rounded-lg bg-emerald-500/90 px-3 py-1 text-[13px] font-bold text-white hover:bg-emerald-500 disabled:opacity-50"
+            className="rounded-lg bg-cyan-400 px-3 py-1 text-[13px] font-bold text-[#06202a] hover:bg-cyan-300 disabled:opacity-50"
           >
             {rs.compiling ? tr(lang, 'running') : `▶ ${tr(lang, 'run')}`}
           </button>
@@ -325,7 +325,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-full flex-col bg-[#0b1220] text-slate-200">
+    <div className="flex h-full flex-col bg-[#070b14] text-slate-200">
       <Header
         lang={lang}
         onLang={changeLang}

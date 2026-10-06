@@ -53,7 +53,7 @@ export default function ExamplesModal({
             <span>
               <span className="block text-sm font-bold text-white">
                 {tr(lang, 'freePlayground')}{' '}
-                <span className="ml-1 rounded bg-emerald-400/20 px-1.5 py-0.5 text-[10px] font-bold uppercase text-emerald-300">
+                <span className="ml-1 rounded bg-cyan-400/20 px-1.5 py-0.5 text-[10px] font-bold uppercase text-cyan-300">
                   {tr(lang, 'newBadge')}
                 </span>
               </span>

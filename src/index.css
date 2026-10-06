@@ -41,8 +41,8 @@ body,
 /* ---- tree node render flash (visualizer panel) ---- */
 @keyframes rvp-node-flash {
   0% {
-    background-color: rgba(52, 211, 153, 0.35);
-    border-color: rgba(52, 211, 153, 0.9);
+    background-color: rgba(34, 211, 238, 0.35);
+    border-color: rgba(34, 211, 238, 0.9);
   }
   100% {
     background-color: transparent;

@@ -26,7 +26,7 @@ export default function Header(p: HeaderProps) {
     'flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[13px] font-medium text-slate-200 hover:bg-white/10 transition-colors';
 
   return (
-    <header className="relative z-30 flex h-13 shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-[#0b1220]/95 px-3 py-2 backdrop-blur">
+    <header className="relative z-30 flex h-13 shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-[#070b14]/95 px-3 py-2 backdrop-blur">
       <button onClick={p.onHome} className="flex min-w-0 items-center gap-2.5 text-left" title="React Visual Playground">
         <span className="text-2xl leading-none">⚛️</span>
         <div className="min-w-0">
