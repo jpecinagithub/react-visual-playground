@@ -4,6 +4,7 @@ import { tr, type Lang } from '../i18n';
 interface HeaderProps {
   lang: Lang;
   onLang: (l: Lang) => void;
+  onHome: () => void;
   theme: 'dark' | 'light';
   onTheme: () => void;
   onExamples: () => void;
@@ -26,7 +27,7 @@ export default function Header(p: HeaderProps) {
 
   return (
     <header className="relative z-30 flex h-13 shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-[#0b1220]/95 px-3 py-2 backdrop-blur">
-      <div className="flex min-w-0 items-center gap-2.5">
+      <button onClick={p.onHome} className="flex min-w-0 items-center gap-2.5 text-left" title="React Visual Playground">
         <span className="text-2xl leading-none">⚛️</span>
         <div className="min-w-0">
           <h1 className="truncate text-[15px] font-bold tracking-tight text-white">
@@ -36,7 +37,7 @@ export default function Header(p: HeaderProps) {
             {tr(lang, 'appTagline')}
           </p>
         </div>
-      </div>
+      </button>
 
       <div className="flex items-center gap-0.5 sm:gap-1">
         <button onClick={p.onExamples} className={btn} title={tr(lang, 'examples')}>

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string';
 import Header from './components/Header';
+import Landing from './components/Landing';
 import ExamplesModal from './components/ExamplesModal';
 import LearnPanel from './components/LearnPanel';
 import MindMapModal from './components/MindMapModal';
@@ -75,6 +76,12 @@ export default function App() {
   const [mobileTab, setMobileTab] = useState<'code' | 'preview' | 'viz'>('code');
   const [shareCopied, setShareCopied] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
+  // Landing first, unless a shared snippet (#c=) wants the playground directly.
+  const [view, setView] = useState<'landing' | 'playground'>(() =>
+    typeof window !== 'undefined' && window.location.hash.startsWith('#c=')
+      ? 'playground'
+      : 'landing',
+  );
 
   const runtime = useRuntime();
   const didInit = useRef(false);
@@ -313,11 +320,16 @@ export default function App() {
     />
   );
 
+  if (view === 'landing') {
+    return <Landing lang={lang} onLang={changeLang} onStart={() => setView('playground')} />;
+  }
+
   return (
     <div className="flex h-full flex-col bg-[#0b1220] text-slate-200">
       <Header
         lang={lang}
         onLang={changeLang}
+        onHome={() => setView('landing')}
         theme={theme}
         onTheme={() => {
           setTheme((t) => {
